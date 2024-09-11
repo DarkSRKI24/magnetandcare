@@ -1,0 +1,91 @@
+<div class="flex justify-center">
+    <div class="flex justify-between flex-col md:flex-row w-full lg:w-4/5 m-0 md:m-4">
+        <div class="flex justify-between m-4 md:m-0">
+            <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
+                <a href="/" class="inline-flex items-center gap-x-2">
+                    <img src="/MC-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
+                </a>
+            </div>
+
+            <label for="menu-toggle" class="flex items-center cursor-pointer md:hidden">
+                <svg
+                    class="menu-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 20 20"
+                >
+                    <title>menu</title>
+                    <rect class="line line1" x="0" y="3" width="20" height="2"></rect>
+                    <rect class="line line2" x="0" y="9" width="20" height="2"></rect>
+                    <rect class="line line3" x="0" y="15" width="20" height="2"></rect>
+                </svg>
+            </label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />                       
+        </div>
+    
+        <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+            <nav class="flex justify-center my-4 md:my-0">
+                <ul class="flex flex-col md:flex-row items-center gap-4 w-full text-2xl md:text-lg text-nowrap text-center menu">
+                    <li class="w-full"><a href="/" class="w-full inline-block py-2 md:py-0">Početna</a></li>
+                    <li class="w-full"><a href="about" class="w-full inline-block py-2 md:py-0">O nama</a></li>
+                    <li class="w-full"><a href="career" class="w-full inline-block py-2 md:py-0">Karijere</a></li>
+                    <li class="w-full"><a href="service" class="w-full inline-block py-2 md:py-0">Usluge</a></li>
+                    <li class="w-full"><a href="contact" class="w-full inline-block py-2 md:py-0">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Initial state of the SVG lines */
+.menu-icon {
+    transition: transform 0.3s ease;
+}
+
+.line {
+    fill: #0d7c83;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.line1, .line3 {
+    fill: #0d7c83;
+}
+
+.menu-icon.open .line1 {
+    transform: rotate(-45deg) translate(-50%, 52.5%);
+}
+
+.menu-icon.open .line2 {
+    opacity: 0;
+}
+
+.menu-icon.open .line3 {
+    transform: rotate(45deg) translate(22.5%, -80%);
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const menuIcon = document.querySelector('.menu-icon'); // Select the menu icon
+
+        // Check if elements exist before adding event listeners
+        if (menuToggle && menu && menuIcon) {
+            // Function to toggle the menu and the icon
+            const toggleMenu = () => {
+                menu.classList.toggle('hidden');
+                menuIcon.classList.toggle('open'); // Toggle the 'open' class for the icon
+            };
+
+            // Add event listener to the checkbox
+            menuToggle.addEventListener('change', () => {
+                toggleMenu();
+            });
+        }
+    });
+</script>
+    
+    
