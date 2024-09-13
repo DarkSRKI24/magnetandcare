@@ -1,7 +1,10 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import { languages, defaultLang } from '../i18n/ui';
 
-const aboutURL = getRelativeLocaleUrl("sr", "index");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <header>
@@ -10,7 +13,7 @@ const aboutURL = getRelativeLocaleUrl("sr", "index");
             <div class="flex justify-between flex-col md:flex-row">
                 <div class="flex justify-between m-4 md:m-0">
                     <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
-                        <a href="/" class="inline-flex items-center gap-x-2">
+                        <a href={translatePath('/home/')} class="inline-flex items-center gap-x-2">
                             <img src="/MC-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
                         </a>
                     </div>
@@ -35,19 +38,21 @@ const aboutURL = getRelativeLocaleUrl("sr", "index");
                 <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
                     <div class="flex justify-center my-4 md:my-0">
                         <ul class="flex flex-col md:flex-row items-center gap-4 w-full text-2xl md:text-lg text-nowrap text-center menu">
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href="/" class="w-full inline-block py-2 md:py-0">Početna</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href="/about" class="w-full inline-block py-2 md:py-0">O nama</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href="/career" class="w-full inline-block py-2 md:py-0">Karijere</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href="/service" class="w-full inline-block py-2 md:py-0">Usluge</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href="/contact" class="w-full inline-block py-2 md:py-0">Kontakt</a></li>
+                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/home/')} class="w-full inline-block py-2 md:py-0">{t('nav.home')}</a></li>
+                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/about/')} class="w-full inline-block py-2 md:py-0">{t('nav.about')}</a></li>
+                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/career/')} class="w-full inline-block py-2 md:py-0">{t('nav.career')}</a></li>
+                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/service/')} class="w-full inline-block py-2 md:py-0">{t('nav.service')}</a></li>
+                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/contact/')} class="w-full inline-block py-2 md:py-0">{t('nav.contact')}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-4 my-4">
-                <li><a class="p-2">Srpski</a></li>
-                <li><a class="p-2">English</a></li>
-                <li><a class="p-2">Deutsch</a></li> 
+                {Object.entries(languages).map(([lang, label]) => (
+                    <li>
+                      <a href={lang === defaultLang ? '/' : `/${lang}/`} class="p-2">{label}</a>
+                    </li>
+                  ))} 
             </ul>
         </div>
     </nav>
