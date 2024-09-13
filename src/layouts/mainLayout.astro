@@ -1,14 +1,19 @@
 ---
 import "../styles/global.css"
-import Header from "./header.astro";
-import Footer from "./footer.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+
+import {  getRelativeLocaleUrlList } from 'astro:i18n';
+
 interface Props {
 	title: string;
+	language: string;
 }
-const { title } = Astro.props;
+const { language,title } = Astro.props;
+const localeUrls = getRelativeLocaleUrlList();
 ---
 
-<html lang="rs">
+<html lang={language}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/MC-logo.svg" />
@@ -18,6 +23,7 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 		
 		<title>{title}</title>
 	</head>
