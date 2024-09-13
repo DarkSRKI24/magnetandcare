@@ -7,13 +7,13 @@ import {  getRelativeLocaleUrlList } from 'astro:i18n';
 
 interface Props {
 	title: string;
-	language: string;
+	lang: string;
 }
-const { language,title } = Astro.props;
+const { lang, title } = Astro.props;
 const localeUrls = getRelativeLocaleUrlList();
 ---
 
-<html lang={language}>
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/MC-logo.svg" />
