@@ -1,59 +1,49 @@
 ---
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
-import { languages, defaultLang } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header>
+<header class="sticky top-0 bg-background">
     <nav class="flex justify-center">
-        <div class="w-full lg:w-4/5 m-0 md:m-4">
-            <div class="flex justify-between flex-col md:flex-row">
-                <div class="flex justify-between m-4 md:m-0">
-                    <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
-                        <a href={translatePath('/home/')} class="inline-flex items-center gap-x-2">
-                            <img src="/MC-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
-                        </a>
-                    </div>
-        
-                    <label for="menu-toggle" class="flex items-center cursor-pointer md:hidden">
-                        <svg
-                            class="menu-icon"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                        >
-                            <title>menu</title>
-                            <line class="line1" x1="3" y1="6" x2="21" y2="6" stroke="#0d7c83" stroke-width="2" />
-                            <line class="line2" x1="3" y1="12" x2="21" y2="12" stroke="#0d7c83" stroke-width="2" />
-                            <line class="line3" x1="3" y1="18" x2="21" y2="18" stroke="#0d7c83" stroke-width="2" />
-                        </svg>
-                    </label>
-                    <input class="hidden" type="checkbox" id="menu-toggle" />                       
+        <div id="header-is-sticky" class="flex justify-between flex-col md:flex-row w-full lg:w-4/5 m-0 md:m-4">
+            <div class="flex justify-between m-4 md:m-0">
+                <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
+                    <a href={translatePath('/home/')} class="inline-flex items-center gap-x-2">
+                        <img src="/MC-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
+                    </a>
                 </div>
-            
-                <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
-                    <div class="flex justify-center my-4 md:my-0">
-                        <ul class="flex flex-col md:flex-row items-center gap-4 w-full text-2xl md:text-lg text-nowrap text-center menu">
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/home/')} class="w-full inline-block py-2 md:py-0">{t('nav.home')}</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/about/')} class="w-full inline-block py-2 md:py-0">{t('nav.about')}</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/career/')} class="w-full inline-block py-2 md:py-0">{t('nav.career')}</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/service/')} class="w-full inline-block py-2 md:py-0">{t('nav.service')}</a></li>
-                            <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/contact/')} class="w-full inline-block py-2 md:py-0">{t('nav.contact')}</a></li>
-                        </ul>
-                    </div>
+    
+                <label for="menu-toggle" class="flex items-center cursor-pointer md:hidden">
+                    <svg
+                        class="menu-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                    >
+                        <title>menu</title>
+                        <line class="line1" x1="3" y1="6" x2="21" y2="6" stroke="#0d7c83" stroke-width="2" />
+                        <line class="line2" x1="3" y1="12" x2="21" y2="12" stroke="#0d7c83" stroke-width="2" />
+                        <line class="line3" x1="3" y1="18" x2="21" y2="18" stroke="#0d7c83" stroke-width="2" />
+                    </svg>
+                </label>
+                <input class="hidden" type="checkbox" id="menu-toggle" />                       
+            </div>
+        
+            <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+                <div class="flex justify-center my-4 md:my-0">
+                    <ul class="flex flex-col md:flex-row items-center gap-4 w-full text-2xl md:text-lg text-nowrap text-center menu">
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/home/')} class="w-full inline-block py-2 md:py-0">{t('nav.home')}</a></li>
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/about/')} class="w-full inline-block py-2 md:py-0">{t('nav.about')}</a></li>
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/career/')} class="w-full inline-block py-2 md:py-0">{t('nav.career')}</a></li>
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/service/')} class="w-full inline-block py-2 md:py-0">{t('nav.service')}</a></li>
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/contact/')} class="w-full inline-block py-2 md:py-0">{t('nav.contact')}</a></li>
+                    </ul>
                 </div>
             </div>
-            <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-4 my-4">
-                {Object.entries(languages).map(([lang, label]) => (
-                    <li>
-                      <a href={lang === defaultLang ? '/' : `/${lang}/`} class="p-2">{label}</a>
-                    </li>
-                  ))} 
-            </ul>
         </div>
     </nav>
 </header>
@@ -75,7 +65,6 @@ const translatePath = useTranslatedPath(lang);
 .menu-icon.open .line3 {
     transform: rotate(45deg) translate(25%, -75%);
 }
-
 
 </style>
 
@@ -104,6 +93,7 @@ const translatePath = useTranslatedPath(lang);
             });
         }
     });
+
 </script>
     
     

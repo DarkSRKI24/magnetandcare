@@ -14,7 +14,6 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    // If the requested path is for the home page, use "/" for the root path
     if (path === '/home/') {
       return !showDefaultLang && l === defaultLang ? '/' : `/${l}/`;
     }

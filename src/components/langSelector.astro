@@ -1,0 +1,16 @@
+---
+import { languages, defaultLang } from '../i18n/ui';
+---
+
+<div class="flex justify-center">
+    <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-4 my-4 w-full lg:w-4/5">
+        {Object.entries(languages).map(([lang, label]) => (
+            <li>
+            <a href={lang === defaultLang ? '/' : `/${lang}/`} class="p-2 bg-accent rounded-lg">{label}</a>
+            </li>
+        ))} 
+    </ul>
+</div>
+
+<style>
+</style>
