@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css"
+import HeadMeta from "../components/headMeta.astro";
 import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 import LangSelector from "../components/langSelector.astro";
+import Footer from "../components/footer.astro";
 
 import { getLangFromUrl } from '../i18n/utils';
 
@@ -21,11 +22,8 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<HeadMeta />
 
-		
 		<title>{title}</title>
 	</head>
 	<body class="text-text bg-background montserrat-500">
