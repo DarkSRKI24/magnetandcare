@@ -1,18 +1,18 @@
 ---
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils.ts";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header class="sticky top-0 bg-background">
+<header class="sticky z-20 top-0 bg-background">
     <nav class="flex justify-center">
         <div id="header-is-sticky" class="flex justify-between flex-col md:flex-row w-full lg:w-4/5 m-0 md:m-4">
             <div class="flex justify-between m-4 md:m-0">
                 <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
                     <a href={translatePath('/home/')} class="inline-flex items-center gap-x-2">
-                        <img src="/MC-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
+                        <img src="/mc_logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
                     </a>
                 </div>
     

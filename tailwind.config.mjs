@@ -10,6 +10,9 @@ export default {
         secondary: '#83dee5',
         accent: '#5fdde6',
       },
+      width: {
+        '340': '340px',
+      },
     },
   },
   plugins: [],
