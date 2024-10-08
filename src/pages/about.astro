@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/mainLayout.astro';
-import { CarouselTransition } from '../components/carousel.jsx';
+import { CarouselMT } from '../components/carousel.jsx';
+
 ---
 
 <MainLayout lang="sr" title="Magnet And Care - O nama">
@@ -12,7 +13,12 @@ import { CarouselTransition } from '../components/carousel.jsx';
                 <p>
                     Magnet And Care doo je posvećen pružanju profesionalne nege starijim osobama. Naš iskusni tim medicinskih sestara i negovatelja brine o onima kojima je najpotrebnije, pružajući im podršku u svakodnevnim aktivnostima, kao i u specijalizovanoj medicinskoj nezi. Verujemo da kvalitetna nega dolazi od saosećajnih i posvećenih profesionalaca, i zato neprestano radimo na izgradnji tima koji deli našu viziju.
                 </p>
-                <CarouselTransition></CarouselTransition>
+                <CarouselMT client:only="react" />
+                <!-- Your HTML file -->
+                <button id="autoplay-toggle" class="px-4 py-2 bg-blue-500 text-white rounded-lg">
+                    Stop Autoplay
+                </button>
+  
             </div>
             <div>
                 <h3>Naša Misija</h3>
