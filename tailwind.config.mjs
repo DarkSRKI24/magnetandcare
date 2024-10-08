@@ -11,7 +11,10 @@ export default {
         accent: '#5fdde6',
       },
       width: {
-        '340': '340px',
+        '320': '320px',
+      },
+      height: {
+        '360': '360px',
       },
     },
   },

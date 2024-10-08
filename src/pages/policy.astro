@@ -1,0 +1,45 @@
+---
+import MainLayout from '../layouts/mainLayout.astro';
+
+import { attributionAuthors } from '../attributionAuthors.ts';
+---
+
+<MainLayout lang="sr" title="Magnet And Care - Pravna">
+    <section class="flex flex-col items-center">
+        <div class="my-12 w-11/12 sm:w-4/5 flex flex-col items-center gap-5">
+            <h2 class="font-bold text-5xl">Atribucije</h2>
+            <p class="my-8 self-start font font-semibold text-2xl italic">
+                Kliknite na slike da biste videli originale i podržali kreatore.
+            </p>
+            <div class="w-full grid grid-cols-10 grid-rows-10 gap-5">
+                {attributionAuthors.map((person) => (
+                    <div class="grid grid-rows-subgrid md:grid-cols-subgrid col-span-10 2xl:col-span-5 row-span-10 border-4 border-text rounded-lg md:items-center">
+                        <div class="w-full h-full col-span-10 md:col-span-4 2xl:col-span-2 row-end-5 row-span-4 md:row-span-10">
+                            <a href={person.linkCreator} target="_blank" class="flex justify-center items-center h-full w-full">
+                                {person.artworkType === 'image' ? (
+                                    <img src={person.artworkImage} alt={`${person.authorName}'s artwork`} class="h-full w-full object-cover"/>
+                                ) : person.artworkType === 'svg' ? (
+                                    <div set:html={person.svg} class="w-1/4 md:w-1/2 py-4 md:py-0"/>
+                                ) : (
+                                    <div class="flex justify-center items-center font-bold text-3xl">{person.text}</div>
+                                )}
+                            </a>
+                        </div>
+                        <div class="px-5 md:px-0 col-span-8 md:col-span-4 2xl:col-span-2 row-span-4 md:row-span-10">
+                            <div class="font-bold text-2xl">Autori:</div>
+                            <div set:html={person.authorName} class="font-semibold text-xl text-nowrap" />
+                        </div>
+                        <div class="w-full h-full px-5 md:px-0 col-span-4 md:col-span-2 2xl:col-span-1 row-span-2 md:row-span-10">
+                            <a href={person.linkLicence} target="_blank" class="h-full w-full py-5 md:py-0 flex items-center font-semibold text-2xl md:hover:text-accent duration-300">Licenca</a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+    </section>
+
+    <style>
+
+    </style>
+</MainLayout>

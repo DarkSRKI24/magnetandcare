@@ -1,18 +1,18 @@
 ---
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils.ts";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils.ts';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header class="sticky z-20 top-0 bg-background">
+<header class="sticky z-20 top-0 bg-background border-b-[1px] border-gray-500/15">
     <nav class="flex justify-center">
         <div id="header-is-sticky" class="flex justify-between flex-col md:flex-row w-full lg:w-4/5 m-0 md:m-4">
             <div class="flex justify-between m-4 md:m-0">
                 <div class="flex items-center font-bold text-lg md:text-2xl lg:text-3xl">
                     <a href={translatePath('/home/')} class="inline-flex items-center gap-x-2">
-                        <img src="/mc_logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
+                        <img src="/mc-logo.svg" alt="Logo" class="size-8 md:size-12 lg:size-16"> Magnet And Care
                     </a>
                 </div>
     
@@ -38,8 +38,8 @@ const translatePath = useTranslatedPath(lang);
                     <ul class="flex flex-col md:flex-row items-center gap-4 w-full text-2xl md:text-lg text-nowrap text-center menu">
                         <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/home/')} class="w-full inline-block py-2 md:py-0">{t('nav.home')}</a></li>
                         <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/about/')} class="w-full inline-block py-2 md:py-0">{t('nav.about')}</a></li>
-                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/career/')} class="w-full inline-block py-2 md:py-0">{t('nav.career')}</a></li>
                         <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/service/')} class="w-full inline-block py-2 md:py-0">{t('nav.service')}</a></li>
+                        <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/career/')} class="w-full inline-block py-2 md:py-0">{t('nav.career')}</a></li>
                         <li class="w-full md:hover:text-accent ease-in-out duration-300"><a href={translatePath('/contact/')} class="w-full inline-block py-2 md:py-0">{t('nav.contact')}</a></li>
                     </ul>
                 </div>

@@ -5,8 +5,8 @@ import { getLangFromUrl } from '../i18n/utils.ts';
 const currentLang = getLangFromUrl(Astro.url); // Get the current language from the URL
 ---
 
-<div class="flex justify-center">
-    <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-4 my-4 w-full lg:w-4/5">
+<div class="flex justify-center bg-background bg-gradient-to-t from-background/0 from-75% to-gray-500/15">
+    <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-5 my-4 w-full lg:w-4/5">
         {Object.entries(languages).map(([lang, { label, flag }]) => (
             <li>
                 <a 
@@ -22,4 +22,5 @@ const currentLang = getLangFromUrl(Astro.url); // Get the current language from 
 </div>
 
 <style>
+
 </style>

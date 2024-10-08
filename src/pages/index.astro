@@ -1,99 +1,103 @@
 ---
-import MainLayout from "../layouts/mainLayout.astro";
+import MainLayout from '../layouts/mainLayout.astro';
 ---
 
 <MainLayout lang="sr" title="Magnet And Care">
-	<section class="relative flex justify-center py-24 bg-cover bg-fixed bg-no-repeat" style="background-image: url('/hand_hero.jpg');">
-		<div class="relative z-10 lg:w-4/5 flex  items-center">
-			<div class="w-1/2 flex flex-col gap-4">
-				<h1 class="font-bold text-4xl mb-6">Dobrodošli u <span class="gradient-text">Magnet And Care</span> DOO</h1>
-				<p class="text-2xl">
-					Naša misija je pružanje vrhunske nege starijim i invalidnim osobama, omogućavajući im dostojanstven i kvalitetan život. </br>
-					Sa sedištem u Apatinu, Srbija, naš tim stručnjaka svakodnevno radi na poboljšanju života onih kojima je potrebna podrška. </br>
+	<section class="relative flex justify-center py-10 sm:py-24 lg:bg-[url('/hand-hero.jpg')] bg-cover bg-fixed bg-no-repeat bg-secondary/30">
+		<div class="relative z-10 mx-4 sm:mx-20 2xl:mx-0 2xl:w-4/5 flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-16 xl:gap-5 2xl:gap-0">
+			<div class="lg:w-2/3 2xl:w-1/2 flex flex-col gap-4 order-1 lg:order-none">
+				<div class="mb-2 sm:mb-6 font-bold text-xl sm:text-3xl xl:text-4xl sm:text-nowrap text-center lg:text-start">Dobrodošli u <h1 class="gradient-text inline-block">Magnet And Care</h1> DOO</div>
+				<p class="text-base sm:text-lg xl:text-2xl text-center sm:text-justify lg:text-start">
+					Naša misija je pružanje vrhunske nege starijim i invalidnim osobama, omogućavajući im dostojanstven i kvalitetan život.
+					Sa sedištem u Apatinu, Srbija, naš tim stručnjaka svakodnevno radi na poboljšanju života onih kojima je potrebna podrška.
 					Mi brinemo o vašim najmilijima, pružajući im sveobuhvatnu negu i pažnju koju zaslužuju.
 				</p>
-				<div class="flex gap-4">
+				<div class="w-max flex flex-col sm:flex-row self-center lg:self-start gap-5 sm:gap-10 lg:gap-5 text-center lg:text-start">
 					<a href="/about" class="inline-block py-2 px-4 rounded-lg bg-accent font-bold text-lg">Saznaj više o nama</a>
 					<a href="/contact" class="inline-block py-2 px-4 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-background md:hover:text-text">Kontaktiraj nas</a>
 				</div>
 			</div>
-			<div class="w-1/2 flex justify-center">
-				<img src="/mc_logo.svg" alt="Logo" class="w-72">
+			<div class="flex justify-center grow order-0 lg:order-none">
+				<img src="/mc-logo.svg" alt="Logo" class="w-24 sm:w-48 xl:w-72">
 			</div>
 		</div>
-		<div class="absolute z-0 top-0 w-full h-full bg-white/80"></div>
+		<div class="absolute z-0 top-0 left0 w-full h-full lg:bg-white/80"></div>
 	</section>
 	<section class="flex justify-center">
-		<div class="w-4/5 py-24 flex justify-center gap-16">
-			<div class="relative w-340 flex flex-col flex-nowrap border-4 border-accent rounded-lg">
-				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background text-2xl">Radno vreme</h2>
-				<div class="m-8 flex flex-col gap-5">
-					<div class="flex justify-between">
+		<div class="sm:w-4/5 py-24 flex flex-wrap justify-center gap-16">
+			<div class="relative w-320 h-360 flex flex-col flex-nowrap justify-center border-4 border-accent rounded-lg">
+				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background font-bold text-2xl">Radno vreme</h2>
+				<ul class="m-8 flex flex-col gap-5">
+					<li class="flex justify-between">
 						<span>Ponedeljak</span>
 						<span>08:30 - 16:30</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Utorak</span>
 						<span>08:30 - 16:30</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Sreda</span>
 						<span>08:30 - 16:30</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Četvrtak</span>
 						<span>08:30 - 16:30</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Petak</span>
 						<span>08:30 - 16:30</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Subota</span>
 						<span class="text-red-600">ZATVORENO</span>
-					</div>
-					<div class="flex justify-between">
+					</li>
+					<li class="flex justify-between">
 						<span>Nedelja</span>
 						<span class="text-red-600">ZATVORENO</span>
-					</div>
-				</div>
+					</li>
+				</ul>
 			</div>
-			<div class="relative w-340 flex flex-col flex-nowrap border-4 border-accent rounded-lg">
-				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background text-2xl">Hitni kontakt</h2>
+			<div class="relative w-320 h-360 flex flex-col flex-nowrap justify-center border-4 border-accent rounded-lg">
+				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background font-bold text-2xl">Hitni kontakt</h2>
 				<div class="m-8">
-					<a href="tel:+38164118894" class="flex justify-between mb-4 p-4 bg-accent md:hover:bg-primary md:hover:text-background duration-300 rounded-full font-semibold text-2xl">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8"><title>phone-alert</title><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4C3,3.44 3.45,3 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.24 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.58L6.62,10.79M17,12V10H19V12H17M17,8V2H19V8H17Z" /></svg>
-						<div>+381-64-118894</div>
+					<a href="tel:+381641188942" class="mb-4 p-4 flex justify-around gap-2 flex-nowrap bg-accent md:hover:bg-primary md:hover:text-background duration-300 rounded-full">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 fill-text"><title>phone-alert</title><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4C3,3.44 3.45,3 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.24 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.58L6.62,10.79M17,12V10H19V12H17M17,8V2H19V8H17Z" /></svg>
+						<div class="font-semibold text-xl">+381-64-1188942</div>
 					</a>
 					<p>
-						Ako vam je potreban hitan kontakt, pozovite nas i neko će vam se javiti u najkraćem mogućem roku tokom radnog vremena. </br>
-						Vaša briga nam je prioritet, a naš tim je tu da pruži podršku kada vam je najpotrebnija.
+						Ako vam je potreban hitan kontakt, pozovite nas i neko će vam se javiti u najkraćem mogućem roku tokom radnog vremena.
+						<span class="font-semibold">Vaša briga nam je prioritet</span>, a naš tim je tu da pruži podršku kada vam je najpotrebnija.
 					</p>
 				</div>
 			</div>
-			<div class="relative w-340 flex flex-col flex-nowrap border-4 border-accent rounded-lg">
-				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background text-2xl">Pružamo vam</h2>
-				<div class="m-8 flex flex-col gap-1.5">
-					<span>&bull; Kvalitetnu medicinsku negu</span>
-					<span>&bull; Posvećenu zdravstvenu uslugu</span>
-					<span>&bull; Besplatan smeštaj za zaposlene</span>
-					<span>&bull; Besplatna ishrana za zaposlene</span>
-					<span>&bull; Obezbeđene radne vize</span>
-					<span>&bull; Plaćen i organizovan prevoz</span>
-					<span>&bull; Osiguran privremeni boravak</span>
-					<span>&bull; Stalni radni odnos</span>
-					<span>&bull; Isplatu zarade na tekući račun</span>
-					<span>&bull; Uplatu poreza i doprinosa</span>
+			<div class="relative w-320 h-360 flex flex-col flex-nowrap justify-center border-4 border-accent rounded-lg">
+				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background font-bold text-2xl">Pružamo vam</h2>
+				<div class="m-8 flex flex-col gap-5">
+					<ul class="flex flex-col flex-nowrap gap-8">
+						<ul>
+							<h3 class="text-xl mb-2">Usluge nege</h3>
+							<p>
+								Personalizovana nega za dostojanstven život.
+							</p>
+							<a href="/service" class="inline-block mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg">Saznaj više</a>
+						</ul>
+						<ul>
+							<h3 class="text-xl mb-2 ">Siguran posao</h3>
+							<p>
+								Stabilan posao, karijera i mnogo toga.
+							</p>
+							<a href="/career" class="inline-block mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg">Saznaj više</a>
+						</ul>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</section>
-	<section>
-		<div class="h-[2000px]"></div>
 	</section>
 </MainLayout>
 
 <style>
+	
 .gradient-text {
 	background: linear-gradient(90deg, rgb(13, 124, 131), rgb(95, 221, 230));
 	-webkit-background-clip: text;
