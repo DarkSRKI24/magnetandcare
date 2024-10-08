@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/mainLayout.astro';
 
-import { attributionAuthors } from '../attributionAuthors.ts';
+import { attributionAuthors } from '../components/attributionAuthors.ts';
 ---
 
 <MainLayout lang="sr" title="Magnet And Care - Pravna">
@@ -17,7 +17,7 @@ import { attributionAuthors } from '../attributionAuthors.ts';
                         <div class="w-full h-full col-span-10 md:col-span-4 2xl:col-span-2 row-end-5 row-span-4 md:row-span-10">
                             <a href={person.linkCreator} target="_blank" class="flex justify-center items-center h-full w-full">
                                 {person.artworkType === 'image' ? (
-                                    <img src={person.artworkImage} alt={`${person.authorName}'s artwork`} class="h-full w-full object-cover"/>
+                                    <img src={person.artworkImage} alt={`${person.authorName} delo`} class="h-full w-full object-cover"/>
                                 ) : person.artworkType === 'svg' ? (
                                     <div set:html={person.svg} class="w-1/4 md:w-1/2 py-4 md:py-0"/>
                                 ) : (
