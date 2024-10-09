@@ -1,114 +1,72 @@
-import { useState, useEffect } from "react";
-import { Carousel, IconButton } from "@material-tailwind/react";
+import React, { useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-export function CarouselMT() {
-
-  const [autoPlay, setAutoPlay] = useState(true);
+const SwiperComponent = () => {
+  const swiperRef = useRef(null);
+  const [isAutoplayActive, setIsAutoplayActive] = useState(true);
 
   useEffect(() => {
-    // Get the button element from the HTML file
-    const toggleButton = document.getElementById("autoplay-toggle");
+    const toggleButton = document.getElementById('autoplay-toggle');
+    if (toggleButton) {
+      toggleButton.innerText = isAutoplayActive ? 'Stop Autoplay' : 'Start Autoplay';
+      toggleButton.addEventListener('click', toggleAutoplay);
+    }
 
-    // Event listener to handle button click
-    const handleToggle = () => {
-      setAutoPlay((prevState) => !prevState);
-      toggleButton.textContent = autoPlay ? "Start Autoplay" : "Stop Autoplay";
-    };
-
-    // Attach the event listener
-    toggleButton.addEventListener("click", handleToggle);
-
-    // Clean up event listener on unmount
     return () => {
-      toggleButton.removeEventListener("click", handleToggle);
+      if (toggleButton) {
+        toggleButton.removeEventListener('click', toggleAutoplay);
+      }
     };
-  }, [autoPlay]);
+  }, [isAutoplayActive]);
+
+  const toggleAutoplay = () => {
+    const swiper = swiperRef.current.swiper;
+    if (swiper && swiper.autoplay.running) {
+      swiper.autoplay.stop();
+      setIsAutoplayActive(false);
+    } else if (swiper) {
+      swiper.autoplay.start();
+      setIsAutoplayActive(true);
+    }
+  };
 
   return (
-    <Carousel
-    className="rounded-xl w-full h-[720px] "
-    transition={{ duration: 2 }}
-    autoplay={autoPlay}
-    autoplayDelay={5000}
-    loop={true}
-      navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-          {new Array(length).fill("").map((_, i) => (
-            <span
-              key={i}
-              className={`block h-2 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "w-16 bg-white" : "w-8 bg-white/50"
-              }`}
-              onClick={() => setActiveIndex(i)}
-            />
-          ))}
-        </div>
-      )}
-      prevArrow={({ handlePrev }) => (
-        <IconButton
-          variant="text"
-          color="black"
-          size="lg"
-          onClick={handlePrev}
-          className="!absolute top-2/4 !left-4 -translate-y-2/4 py-32 px-4 bg-white hover:!bg-white md:hover:bg-white/50"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-        </IconButton>
-      )}
-      nextArrow={({ handleNext }) => (
-        <IconButton
-          variant="text"
-          color="black"
-          size="lg"
-          onClick={handleNext}
-          className="!absolute top-2/4 !right-4 -translate-y-2/4 py-32 px-4 bg-white hover:!bg-white md:hover:bg-white/50"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </IconButton>
-      )}
+    <Swiper
+      ref={swiperRef}
+      style={{
+        '--swiper-navigation-color': '#071111',
+        '--swiper-pagination-color': '#f5fbfc',
+      }}
+      slidesPerView={1}
+      spaceBetween={20}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      speed={2000}
+      loop={true}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="carouselSwiper w-full h-[360px] sm:h-[720px]"
     >
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
+      <SwiperSlide>
+        <img src="/slide 1.jpg" alt="slika 1" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src="/slide 2.jpg" alt="slika 2" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src="/slide 3.jpg" alt="slika 3" />
+      </SwiperSlide>
+    </Swiper>
   );
-}
+};
 
+export default SwiperComponent;
