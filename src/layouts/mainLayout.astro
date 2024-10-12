@@ -22,7 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline />
 
 		<HeadMeta />
 
