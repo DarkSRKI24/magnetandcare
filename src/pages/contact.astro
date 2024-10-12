@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../layouts/mainLayout.astro';
-const sitekey = import.meta.env.TURNSTILE_SITE_KEY;
+// const sitekey = import.meta.env.TURNSTILE_SITE_KEY;
 ---
 
 <MainLayout lang="sr" title="Magnet And Care - Kontakt i Prijava">
@@ -11,10 +11,10 @@ const sitekey = import.meta.env.TURNSTILE_SITE_KEY;
             <div>
                 <div>
                     <h3 class="font-semibold text-3xl">Ostavite nam poruku</h3>
-                    <form action="../components/verify" method="POST" id="form" class="w-1/2 flex flex-col items-start gap-5 text-2xl">
-
-                        <input type="hidden" name="access_key" value="c91bea0a-bfc1-49bc-b8e6-950d907ba3c5">
-
+                    <form 
+                    action="https://formspree.io/f/mbljjjnq"
+                    method="POST"
+                    class="w-1/2 flex flex-col items-start gap-5 text-2xl">
                         <label class="w-full flex flex-col gap-2">
                             Puno ime i prezime:
                             <input type="text" name="username" required placeholder="Unesite vaše puno ime i prezime..." />
@@ -31,9 +31,9 @@ const sitekey = import.meta.env.TURNSTILE_SITE_KEY;
                             Poruka:
                             <textarea name="message" required class="h-64 resize-none overflow-auto" placeholder="Napišite vašu poruku ovde"></textarea>
                         </label>
-                        <div class="cf-turnstile" data-sitekey={sitekey}></div>
+                        <div class="g-recaptcha" data-sitekey="6Lc_WV0qAAAAAKmlEo_gv82_HOmcfSbkpCeHlRc3"></div>
+                        <br>
                         <input type="submit" name="submit" class="w-1/2 self-center" value="Pošaljite"/>
-                        <div id="result"></div>
                     </form>
                 </div>
             </div>
@@ -41,45 +41,16 @@ const sitekey = import.meta.env.TURNSTILE_SITE_KEY;
     </section>
 </MainLayout>
 
-<script is:inline>
-    const form = document.getElementById('form');
-    const result = document.getElementById('result');
-    
-    form.addEventListener('submit', function(e) {
-        const formData = new FormData(form);
-        e.preventDefault();
-    
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-    
-        result.innerHTML = "Molimo vas sačekajte..."
-    
-        fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "E-mail je uspešno poslat!";
-                } else {
-                    console.log(response);
-                    result.innerHTML = json.message;
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.innerHTML = "Došlo je do greške!";
-            })
-            .then(function() {
-                form.reset();
-                setTimeout(() => {
-                    result.style.display = "none";
-                }, 7000);
-            });
-    });
-    </script>
+
+<!-- const sitekey = import.meta.env.TURNSTILE_SITE_KEY; -->
+<!-- <form action="../components/verify" method="POST">
+
+    <div class="cf-turnstile" data-sitekey={sitekey}></div>
+    <input type="submit" value="Submit">
+
+</form> -->
+
+<!-- 
+for future refrence in use of Cloudflare Turnstile
+DONT FORGET THE SCRIPT TAG IN THE HEAD
+ -->
