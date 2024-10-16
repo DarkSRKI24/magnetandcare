@@ -1,0 +1,96 @@
+---
+import MainLayout from '../layouts/mainLayout.astro';
+---
+
+<MainLayout lang="sr" title="Magnet And Care - Politika privatnosti">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5">
+            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Politika privatnosti</h2>
+            <div class="pl-5 md:pl-20">
+                <ol class="list-decimal">
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Uvod</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Magnet And Care DOO (u daljem tekstu: "mi", "naš" ili "nas") se obavezuje na zaštitu vaših privatnih podataka. Ova politika privatnosti objašnjava kako prikupljamo, koristimo i čuvamo informacije koje nam dostavite putem kontakt forme i biltena na našoj veb stranici.
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Podaci koje prikupljamo</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Kada koristite našu kontakt formu, prikupljamo sledeće informacije:
+                            <div class="pl-5">
+                                <ul class="list-disc list-inside">
+                                    <li>Puno ime i prezime</li>
+                                    <li>Email adresa</li>
+                                    <li>Broj telefona (nije obavezan)</li>
+                                    <li>Kratka poruka</li>
+                                </ul>
+                            </div>
+
+                            <br> <!-- Break -->
+
+                            Kada se prijavite za bilten, prikupljamo samo: 
+                            <div class="pl-5">
+                                <ul class="list-disc list-inside">
+                                    <li>Email adresa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Kako koristimo vaše podatke</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Vaše podatke ne delimo sa trećim licima osim u slučaju korišćenja poverljivih servisa za obradu podataka kao što su:
+                            <div class="pl-5">
+                                <ul class="list-disc list-inside">
+                                    <li><a href="https://formspree.io/legal/privacy-policy/" target="_blank" class="underline">Formspree</a>, koji koristimo kao backend servis za obradu podataka iz kontakt forme.</li>
+                                    <li><a href="https://www.intuit.com/privacy/statement/" target="_blank" class="underline">Mailchimp</a>, koji koristimo za slanje obaveštenja putem biltena.</li>
+                                </ul>
+                            </div>
+                            <br>
+                            Oba servisa obrađuju vaše podatke u skladu sa svojim politikama privatnosti i zakonima o zaštiti podataka. U svakom trenutku možete zatražiti više informacija o načinu na koji se vaši podaci obrađuju ili se odjaviti iz biltena putem linka za odjavu u emailovima.
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Sigurnost podataka</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Preduzimamo sve neophodne tehničke i organizacione mere kako bismo zaštitili vaše podatke od neovlašćenog pristupa, zloupotrebe ili gubitka. Vaši podaci prikupljeni putem kontakt forme obrađuju se putem <a href="https://formspree.io/security/" target="_blank" class="underline">Formspree</a> servisa, a podaci prikupljeni za bilten putem <a href="https://mailchimp.com/about/security/" target="_blank" class="underline">Mailchimp</a> platforme. Ovi servisi koriste napredne sigurnosne protokole, uključujući enkripciju i druge mere zaštite, kako bi osigurali bezbednost vaših podataka.
+
+                            Iako preduzimamo sve razumne korake kako bismo osigurali zaštitu vaših podataka, ni jedan metod prenosa podataka putem interneta ili metoda elektronskog čuvanja nije 100% siguran. Stoga ne možemo garantovati apsolutnu sigurnost podataka, ali radimo s pouzdanim servisima koji su u skladu sa važećim zakonima o zaštiti podataka.
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Vaša prava</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Imate pravo da zahtevate pristup, ispravku ili brisanje vaših ličnih podataka. Takođe imate pravo da u bilo kojem trenutku opozovete svoj pristanak za obradu podataka, uključujući mogućnost odjave sa biltena putem linka u svakom emailu koji primite.
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Izmene politike privatnosti</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Zadržavamo pravo da ažuriramo ovu politiku privatnosti. Sve izmene će biti objavljene na našoj veb stranici, a preporučujemo vam da povremeno proverite ovu stranicu kako biste bili informisani o bilo kakvim izmenama.
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="my-4 font-semibold text-lg md:text-3xl">Kontakt</h3>
+                        <div class="pl-5 md:text-2xl">
+                            Ako imate bilo kakva pitanja ili komentare u vezi sa ovom politikom privatnosti, slobodno nas kontaktirajte putem emaila: <a href="mailto:info@magnetandcare.com" target="_blank" class="underline">info@magnetandcare.com</a>.
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    li::marker {
+        font-size: 1.125rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        li::marker {
+            font-size: 1.875rem;
+        }
+    }
+</style>

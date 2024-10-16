@@ -16,6 +16,7 @@ export const ui = {
 
     'footer.created': 'Autor',
     'footer.policy': 'Licenciranje i pripisivanje',
+    'footer.privacy': 'Politika privatnosti',
     'footer.info': 'Informacije',
     'footer.tel': 'Telefon',
     'footer.mail': 'E-Mail',
@@ -31,6 +32,7 @@ export const ui = {
 
     'footer.created': 'Created by',
     'footer.policy': 'Licensing and attributions',
+    'footer.privacy': 'Privacy Policy',
     'footer.info': 'Information',
     'footer.tel': 'Phone number',
     'footer.mail': 'E-Mail',
@@ -46,6 +48,7 @@ export const ui = {
 
     'footer.created': 'Erstellt von',
     'footer.policy': 'Lizenzierung und Zuschreibungen',
+    'footer.privacy': 'Datenschutzrichtlinie',
     'footer.info': 'Informationen',
     'footer.tel': 'Telefonnummer',
     'footer.mail': 'E-Mail',
