@@ -1,7 +1,112 @@
 ---
 import MainLayout from '../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <MainLayout lang="sr" title="Magnet And Care - Zapošljavanje">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5 flex flex-col items-center gap-5 text-lg md:text-2xl">
+            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Pridružite nam se</h2>
+            <div class="w-full 2xl:mb-40 flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full xl:w-1/2">
+                    <h3 class="text-3xl font-semibold">Šta nudimo našim zaposlenima</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Pridruživanjem Magnet And Care DOO, dobijate stabilne uslove rada i podršku koja vam omogućava sigurno zaposlenje i nagrađivanje vašeg truda:
+                    </p>
+                    <ul class="list-disc pl-10 flex flex-col gap-2 font-semibold">
+                        <li>Posao sa prijavom u radni odnos</li>
+                        <li>Isplata zarade na tekući račun i redovna mesečna plata</li>
+                        <li>Bonus za praznike: Božić i Uskrs</li>
+                        <li>Refundacija putnog troška</li>
+                        <li>Plaćeni porezi i doprinosi</li>
+                        <li>Besplatan smeštaj i ishrana</li>
+                        <li>Organizovan prevoz</li>
+                        <li>Bez provizije i bez članarine</li>
+                    </ul>
+                    <p class="my-5 text-start md:text-justify">
+                        Ovi uslovi čine Magnet And Care DOO prijatnim mestom za rad, gde brinemo o našim zaposlenima i njihovim potrebama.
+                    </p>
+                </div>
+                <div class="w-full xl:w-1/2 flex order-first 2xl:order-none 2xl:justify-end items-center">
+                    <div class="w-full flex justify-center 2xl:w-4/5">
+                        <img src="/job-interview.png" alt="Job Interview">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full 2xl:mb-40 flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full xl:w-1/2 mt-10 mb-5 flex order-first 2xl:order-none 2xl:justify-start items-center">
+                    <div class="w-full 2xl:w-4/5 flex justify-center">
+                        <img src="/cv.png" alt="CV">
+                    </div>
+                </div>
+                <div class="w-full xl:w-1/2">
+                    <h3 class="text-3xl font-semibold">Prijavite se za posao u Magnet And Care DOO</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Za lakšu selekciju i kako bismo vas povezali sa odgovarajućom pozicijom, molimo vas da izaberete oblast koja vas interesuje i popunite odgovarajuće podatke. Nakon popunjavanja, kontaktiraćemo vas i uputiti za sledeće korake.
+                    </p>
+                    <div class="flex flex-col gap-5">
+                        <div>
+                            <p class="mb-2 text-start md:text-justify">
+                                Prijavite se za rad u sektoru nege ako imate iskustvo ili želju da pružate podršku starijim i invalidnim osobama.
+                            </p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJG2SETcrYKMPgLPIOk9_IRUTmkmH-CGs05Nf2fx7gRx6-qg/viewform?usp=sf_link" target="_blank" class="inline-block max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Prijava za posao za negu</a>
+                        </div>
+                        <div>
+                            <p class="mb-2 text-start md:text-justify">
+                                Za poslove u ugostiteljstvu (konobarisanje, šank rad, sobarice), prijavite se ovde. <br><b>Osnovno poznavanje engleskog jezika je obavezno za rad u ugostiteljstvu.</b>
+                            </p>
+                            <a href="" target="_blank" class="inline-block max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Prijava za posao za ugostiteljstvo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="w-full flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full xl:w-1/2 self-center"> <!-- self center je ubacen -->
+                    <h3 class="text-3xl font-semibold">Pretplatite se na naš bilten za oglase za posao</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Prijavite se za naš bilten i budite u toku sa najnovijim informacijama, promocijama i radnim prilikama u Magnet And Care DOO. Popunjavanjem ove forme, prijavljujete se za primanje periodičnih obaveštenja putem emaila. Vaš email neće biti deljen sa trećim stranama, osim u slučaju korišćenja Mailchimp platforme za slanje biltena, u skladu sa našom politikom privatnosti, a možete se odjaviti u bilo kojem trenutku putem linka u svakom emailu koji primite.
+                    </p>
+                    <div id="mc_embed_shell">
+                        <div id="mc_embed_signup">
+                            <form action="https://magnetandcare.us19.list-manage.com/subscribe/post?u=bdd9c7910337595506b81b292&amp;id=c07257a9d7&amp;f_id=00ab87e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group my-5 flex flex-col gap-2">
+                                        <label for="mce-EMAIL">E-mail adresa <span class="asterisk text-red-600 italic">*</span></label>
+                                        <input type="email" name="EMAIL" class="required email overflow-auto rounded-lg border-2 border-text px-2 py-1" id="mce-EMAIL" required="" value="">
+                                        <p class="text-xs text-start md:text-justify">
+                                            Prijavom na bilten, saglasni ste da vaš email bude korišćen za slanje novosti i obaveštenja putem Mailchimp platforme. Za više informacija, pogledajte našu <a href={translatePath('/privacy/')} target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">politiku privatnosti</a>.
+                                        </p>
+                                    </div>
+                                <div id="mce-responses" class="clear foot m-0">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response mb-5" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                                <input type="text" name="b_bdd9c7910337595506b81b292_c07257a9d7" tabindex="-1" value="">
+                            </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text" value="Prijavite se">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        
+                    </div>
+                </div>
+                <div class="w-full xl:w-1/2 mt-10 mb-5 flex order-first 2xl:order-none 2xl:justify-end items-center">
+                    <div class="w-full 2xl:w-4/5 flex justify-center">
+                        <img src="/newsletter.png" alt="Newsletter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </MainLayout>

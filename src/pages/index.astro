@@ -16,9 +16,9 @@ const translatePath = useTranslatedPath(lang);
 					Sa sedištem u Apatinu, Srbija, naš tim stručnjaka svakodnevno radi na poboljšanju života onih kojima je potrebna podrška.
 					Mi brinemo o vašim najmilijima, pružajući im sveobuhvatnu negu i pažnju koju zaslužuju.
 				</p>
-				<div class="w-max flex flex-col sm:flex-row self-center lg:self-start gap-5 sm:gap-10 lg:gap-5 text-center lg:text-start">
-					<a href={translatePath('/about/')} class="inline-block px-4 py-2 rounded-lg bg-accent font-bold text-lg">Saznajte više o nama</a>
-					<a href={translatePath('/contact/')} class="inline-block px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-background md:hover:text-text">Kontaktirajte nas</a>
+				<div class="w-max flex flex-col sm:flex-row self-center lg:self-start items-center gap-5 sm:gap-10 lg:gap-5 text-center lg:text-start">
+					<a href={translatePath('/about/')} class="inline-block max-w-max px-4 py-2 rounded-lg text-center bg-accent font-bold text-lg">Saznajte više o nama</a>
+					<a href={translatePath('/contact/')} class="inline-block max-w-max px-4 py-2 rounded-lg text-center bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-background md:hover:text-text">Kontaktirajte nas</a>
 				</div>
 			</div>
 			<div class="flex justify-center grow order-0 lg:order-none">
@@ -65,7 +65,7 @@ const translatePath = useTranslatedPath(lang);
 			<div class="relative w-320 h-360 flex flex-col flex-nowrap justify-center border-4 border-accent rounded-lg">
 				<h2 class="absolute -top-6 -left-1 py-1 pr-2 bg-background font-bold text-2xl">Hitni kontakt</h2>
 				<div class="m-8">
-					<a href="tel:+381641188942" class="mb-4 p-4 flex justify-around gap-2 flex-nowrap bg-accent md:hover:bg-primary md:hover:text-background duration-300 rounded-full">
+					<a href="tel:+381641188942" class="min-w-max mb-4 p-4 flex justify-around gap-2 flex-nowrap bg-accent md:hover:bg-primary md:hover:text-background duration-300 rounded-full text-center">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 fill-text"><title>phone-alert</title><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4C3,3.44 3.45,3 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.24 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.58L6.62,10.79M17,12V10H19V12H17M17,8V2H19V8H17Z" /></svg>
 						<div class="font-semibold text-xl">+381-64-1188942</div>
 					</a>
@@ -84,14 +84,14 @@ const translatePath = useTranslatedPath(lang);
 							<p>
 								Personalizovana nega za dostojanstven život.
 							</p>
-							<a href={translatePath('/service/')} class="inline-block mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg">Saznaj više</a>
+							<a href={translatePath('/service/')} class="inline-block max-w-max mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg text-center">Saznaj više</a>
 						</ul>
 						<ul>
 							<h3 class="text-xl mb-2 ">Siguran posao</h3>
 							<p>
 								Stabilan posao, karijera i mnogo toga.
 							</p>
-							<a href={translatePath('/career/')} class="inline-block mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg">Saznaj više</a>
+							<a href={translatePath('/career/')} class="inline-block max-w-max mt-1 p-1.5 bg-secondary md:hover:bg-primary md:hover:text-background duration-300 rounded-lg text-center">Saznaj više</a>
 						</ul>
 					</ul>
 				</div>

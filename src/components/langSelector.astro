@@ -8,12 +8,12 @@ const currentLang = getLangFromUrl(Astro.url); // Get the current language from 
 <div class="flex justify-center bg-background bg-gradient-to-t from-background/0 from-75% to-gray-500/15">
     <ul class="flex justify-center md:justify-end gap-x-4 sm:gap-x-16 md:gap-5 my-4 w-full lg:w-4/5">
         {Object.entries(languages).map(([lang, { label, flag }]) => (
-            <li>
+            <li class="min-w-max">
                 <a 
                     href={lang === defaultLang ? '/' : `/${lang}/`} 
                     class={`flex items-center p-2 rounded-lg ${lang === currentLang ? 'bg-primary text-background' : 'bg-accent'}`}
                 >
-                    <img src={flag} alt={`${label} flag`} class=" mr-0.5 sm:mr-2 w-4 sm:w-6 sm:h-auto"/>
+                    <img src={flag} alt={`${label} flag`} class="mr-0.5 sm:mr-2 w-4 sm:w-6 sm:h-auto"/>
                     {label}
                 </a>
             </li>
