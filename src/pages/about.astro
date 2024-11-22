@@ -11,18 +11,25 @@ const translatePath = useTranslatedPath(lang);
     <section class="my-4 md:my-8 mx-4 flex justify-center">
         <div class="w-full md:w-4/5">
             <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center lg:text-left">Ko smo mi</h2>
-
-            <div class="flex flex-col lg:flex-row gap-5">
-                <div class="lg:w-1/2 flex flex-col items-center lg:items-start">
-                    <p class="2xl:text-2xl text-start lg:text-justify">
-                        Magnet And Care DOO je posvećen pružanju profesionalne nege starijim osobama. Takođe, nudimo usluge organizacije u ugostiteljstvu i hotelijerstvu, uključujući radna mesta kao što su konobari, šankeri, sobarice i radnici za peglanje veša. Naš tim stručnjaka je posvećen podršci i organizaciji, pružajući efikasna rešenja za svakodnevne izazove i unapređenje kvaliteta usluga koje nudimo, a istovremeno stvarajući prijatno radno okruženje za sve naše zaposlene. Verujemo da kvalitetna nega dolazi od saosećajnih i posvećenih ljudi, i zato neprestano radimo na izgradnji tima koji deli našu viziju.
+            <div class="flex flex-col 2xl:flex-row gap-5">
+                <div class="w-full 2xl:w-1/2 flex flex-col items-center lg:items-start text-lg md:text-2xl">
+                    <p class="mb-4 text-start lg:text-justify">
+                      Magnet And Care DOO je posvećen pružanju profesionalnih usluga u različitim sektorima. Naša ponuda uključuje:
                     </p>
-                    <p class="my-4 2xl:text-2xl text-start lg:text-justify">
+                    <ul class="mb-4 pl-10 list-disc flex flex-col gap-2 text-start">
+                      <li><span class="font-semibold">Negu starijih i invalidnih osoba</span>, omogućavajući im dostojanstven i kvalitetan život.</li>
+                      <li><span class="font-semibold">Usluge organizacije u ugostiteljstvu i hotelijerstvu</span>, sa radnim mestima poput konobara, šankera, sobarica i radnika za peglanje veša.</li>
+                      <li><span class="font-semibold">Održavanje javne čistoće i higijene</span>, kroz poslove vezane za javno komunalne usluge.</li>
+                    </ul>
+                    <p class="mb-4 text-start lg:text-justify">
+                      Naš tim stručnjaka je posvećen podršci i organizaciji, pružajući efikasna rešenja za svakodnevne izazove i unapređenje kvaliteta usluga koje nudimo. Istovremeno, stvaramo prijatno radno okruženje za sve naše zaposlene. Verujemo da kvalitet dolazi od saosećajnih i posvećenih ljudi, zbog čega kontinuirano radimo na izgradnji tima koji deli našu viziju.
+                    </p>
+                    <p class="mb-4 text-start lg:text-justify">
                         Zahvaljujemo vam se što verujete u naš rad i misiju. Ako želite da budete deo našeg tima i doprinesete kroz razne uloge koje nudimo, pozivamo vas da nam se pridružite!
                     </p>
                     <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Kontaktirajte nas</a>
                 </div>
-                <div class="w-full lg:w-1/2 flex flex-col m-auto">
+                <div class="w-full 2xl:w-1/2 flex flex-col m-auto">
                     <div class="rounded-lg overflow-hidden">
                         <SwiperComponent stopAutoplayText="Zaustavite autoplay" startAutoplayText="Pokrenite autoplay" client:load />
                     </div>

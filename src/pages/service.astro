@@ -1,34 +1,73 @@
 ---
 import MainLayout from '../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <MainLayout lang="sr" title="Magnet And Care - Usluge">
     <section class="my-4 md:my-8 mx-4 flex justify-center">
-        <div class="w-full md:w-4/5 flex flex-col items-center gap-5">
-            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Usluge koje nudimo</h2>
-            <div class="w-full grid grid-cols-2 grid-flow-row gap-5 text-2xl">
-                <div class="mr-5">
-                    <h3 class="text-3xl font-semibold">Sveobuhvatna Nega i Podrška</h3>
-                    <p class="my-5 text-justify">
-                        Magnet And Care DOO pruža širok spektar usluga usmerenih na poboljšanje kvaliteta života starijih i invalidnih osoba, uključujući pomoć pri hodanju, davanju lekova, oblačenju, ličnoj higijeni, kao i obavljanje svakodnevnih aktivnosti. Naši stručnjaci pružaju individualizovanu podršku svakom klijentu, osiguravajući im udobnost i sigurnost u svakom trenutku.
-                    </p>
-                    <img src="/care.jpg" alt="Care service" class="rounded-lg">
+        <div class="w-full md:w-4/5 flex flex-col items-center md:items-start gap-5 text-lg md:text-2xl">
+            <div class="mb-8">
+                <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Usluge koje nudimo</h2>
+                <p class="text-start md:text-justify">
+                    Magnet And Care DOO je posvećen pružanju visokokvalitetnih usluga u različitim oblastima, s ciljem da obezbedimo vrhunske uslove kako za naše korisnike, tako i za naše zaposlene. Naš tim stručnjaka pruža profesionalnu i pažljivu podršku u sektoru nege, ugostiteljstva, hotelijarstva i održavanja javnih čistoća. Bez obzira na sektor, cilj nam je da svim našim klijentima omogućimo pouzdane i efikasne usluge, dok istovremeno gradimo stabilno radno okruženje za naše zaposlene.
+                </p>
+            </div>
+            <div class="mb-8 w-full flex justify-center flex-wrap gap-5">
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/care-button-icon.png" alt="Care icon" class="w-32">
+                        <h4 class="font-bold my-auto">Nega starijih i invalidnih osoba</h4>
+                        <a href="#care" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Saznaj više</a>
                 </div>
-                <div class="ml-5">
-                    <h3 class="text-3xl font-semibold">Usluge Hotelijerstva i Ugostiteljstva</h3>
-                    <p class="my-5 text-justify">
-                        Pored medicinskih usluga, Magnet And Care DOO pruža i profesionalne usluge u oblasti hotelijerstva i ugostiteljstva. Naš tim obuhvata kvalifikovane radnike za poslove sobarica, konobara (kelnera), šankera (barmena), kao i radnike za peglanje veša. Posvećeni smo pružanju visokokvalitetnih usluga kako bismo osigurali prijatan boravak i zadovoljstvo klijenata.
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/hotel-button-icon.png" alt="Hotel icon" class="w-32">
+                        <h4 class="font-bold my-auto">Ugostiteljstvo i hotelijarstvo</h4>
+                        <a href="#hotel" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Saznaj više</a>
+                </div>
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/clean-button-icon.png" alt="Cleaning icon" class="w-32">
+                        <h4 class="font-bold my-auto">Održavanje javne čistoće i higijene</h4>
+                        <a href="#clean" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Saznaj više</a>
+                </div>
+            </div>
+            <div id="care" class="mb-8 2xl:mb-20 py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last xl:order-first self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Posvećena briga za dostojanstven i kvalitetan život</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Naša misija je da pružimo visokokvalitetnu negu starijim i invalidnim osobama, omogućavajući im dostojanstven i kvalitetan život. Naš tim stručnjaka pruža fizičku, emocionalnu i socijalnu podršku, sa posebnim akcentom na stvaranje sigurnog i udobnog okruženja za korisnike.
                     </p>
-                    <img src="/bar.jpg" alt="Bar service" class="rounded-lg">
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Kontaktiraj naš tim za negu</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/care.jpg" alt="" class="rounded-lg size-full object-cover object-right">
+                </div>
+            </div>
+            <div id="hotel" class="mb-8 2xl:mb-20 py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Profesionalna usluga za nezaboravna iskustva</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Nudimo širok spektar usluga u ugostiteljstvu i hotelijarstvu, uključujući radna mesta kao što su konobari, šankeri, sobarice i radnici za peglanje veša. Bilo da se radi o uslugama za hotele, restorane, barove ili druge ugostiteljske objekte, naš tim obezbeđuje efikasnu i prijateljsku uslugu.
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Pitaj nas o ugostiteljskim uslugama</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/bar.jpg" alt="" class="rounded-lg size-full object-cover object-left">
+                </div>
+            </div>
+            <div id="clean" class="py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last xl:order-first self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Usluge koje čine vaše okruženje besprekornim</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Pružamo usluge održavanja javnih čistoća, čišćenja javnih prostora, kao i održavanje higijenskih standarda u različitim objektima. Naš tim je obučen za brzo i efikasno rešavanje problema u oblasti održavanja čistoće, sa naglaskom na očuvanje higijene i čistoće ulica, parkova, objekata i drugih javnih površina.
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Angažuj nas za održavanje</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/clean.jpg" alt="" class="rounded-lg size-full object-cover object-left">
                 </div>
             </div>
         </div>
     </section>
 </MainLayout>
-
-<style>
-    .horizontal-break {
-        background: rgb(7,17,17);
-        background: linear-gradient(0deg, rgba(7,17,17,0) 0%, rgba(7,17,17,0.4) 10%, rgba(7,17,17,0.4) 90%, rgba(7,17,17,0) 100%);
-    }
-</style>
