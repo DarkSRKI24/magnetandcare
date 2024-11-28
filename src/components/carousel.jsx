@@ -56,13 +56,13 @@ const SwiperComponent = ({ startAutoplayText, stopAutoplayText }) => {
       className="carouselSwiper select-none w-full h-full"
     >
       <SwiperSlide>
-        <img src="/mc-about-1.jpg" alt="slika 1" />
+        <img src="/mc-about-1.jpg" alt="Media 1" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/mc-about-2.jpg" alt="slika 2" />
+        <img src="/mc-about-2.jpg" alt="Media 2" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/mc-about-3.jpg" alt="slika 3" />
+        <img src="/mc-about-3.jpg" alt="Media 3" />
       </SwiperSlide>
     </Swiper>
   );

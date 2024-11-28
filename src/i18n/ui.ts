@@ -31,7 +31,7 @@ export const ui = {
     'nav.contact': 'Contact',
 
     'footer.created': 'Created by',
-    'footer.policy': 'Licensing and attributions',
+    'footer.policy': 'Licensing and Attribution',
     'footer.privacy': 'Privacy Policy',
     'footer.info': 'Information',
     'footer.tel': 'Phone number',
@@ -47,7 +47,7 @@ export const ui = {
     'nav.contact': 'Kontakt',
 
     'footer.created': 'Erstellt von',
-    'footer.policy': 'Lizenzierung und Zuschreibungen',
+    'footer.policy': 'Lizenzierung und Zuordnung',
     'footer.privacy': 'Datenschutzrichtlinie',
     'footer.info': 'Informationen',
     'footer.tel': 'Telefonnummer',

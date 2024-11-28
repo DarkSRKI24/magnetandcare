@@ -1,7 +1,73 @@
 ---
-import MainLayout from "../../layouts/mainLayout.astro"
+import MainLayout from '../../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<MainLayout lang="de" title="Magnet And Care - Usluge">
-
+<MainLayout lang="de" title="Magnet And Care - Service">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5 flex flex-col items-center md:items-start gap-5 text-lg md:text-2xl">
+            <div class="mb-8">
+                <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Unser Service</h2>
+                <p class="text-start md:text-justify">
+                    Magnet And Care DOO ist darauf bedacht, hochqualitative Dienstleistungen in verschiedenen Bereichen anzubieten, mit dem Ziel, sowohl unseren Kunden als auch unseren Mitarbeitern erstklassige Bedingungen zu gewährleisten. Unser Expertenteam bietet professionelle und sorgfältige Unterstützung in den Bereichen Pflege, Gastgewerbe, Hotelmanagement und öffentliche Sauberkeit. Unabhängig vom Sektor ist es unser Ziel, allen unseren Kunden zuverlässige und effiziente Dienstleistungen zu bieten, während wir gleichzeitig ein stabiles Arbeitsumfeld für unsere Mitarbeiter schaffen.
+                </p>
+            </div>
+            <div class="mb-8 w-full flex justify-center flex-wrap gap-5">
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/care-button-icon.png" alt="Pflege-Symbol" class="w-32">
+                        <h4 class="font-bold my-auto">Senioren- und Behindertenpflege</h4>
+                        <a href="#care" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Erfahren Sie mehr</a>
+                </div>
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/hotel-button-icon.png" alt="Hotel-Symbol" class="w-32">
+                        <h4 class="font-bold my-auto">Gastgewerbe und Hotellerie</h4>
+                        <a href="#hotel" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Erfahren Sie mehr</a>
+                </div>
+                <div class="w-320 h-80 p-5 flex flex-col justify-center items-center text-center gap-5 border-4 border-accent rounded-lg">
+                        <img src="/icons/clean-button-icon.png" alt="Reinigungs-Symbol" class="w-32">
+                        <h4 class="font-bold my-auto">Öffentliche Sauberkeit & Hygiene</h4>
+                        <a href="#clean" class="inline-block max-w-max px-4 py-2 rounded-lg bg-accent md:hover:bg-primary duration-300 font-bold text-lg text-center text-text md:hover:text-background">Erfahren Sie mehr</a>
+                </div>
+            </div>
+            <div id="care" class="mb-8 2xl:mb-20 py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last xl:order-first self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Engagierte Pflege für ein würdevolles und qualitativ hochwertiges Leben</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Unsere Mission ist es, hochwertige Pflege für ältere und behinderte Menschen bereitzustellen, damit sie ein würdevolles und qualitativ hochwertiges Leben führen können. Unser Expertenteam bietet körperliche, emotionale und soziale Unterstützung, mit besonderem Fokus auf die Schaffung einer sicheren und komfortablen Umgebung für unsere Klienten.
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Kontaktieren Sie unser Pflegeteam</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/care.jpg" alt="Pflegedienst" class="rounded-lg size-full object-cover object-right">
+                </div>
+            </div>
+            <div id="hotel" class="mb-8 2xl:mb-20 py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Professioneller Service für unvergessliche Erlebnisse</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Wir bieten eine breite Palette an Dienstleistungen im Gastgewerbe und Hotelmanagement an, einschließlich Positionen wie Kellner, Barkeeper, Zimmermädchen und Wäscher. Egal, ob für Hotels, Restaurants, Bars oder andere Gastgewerbebetriebe – unser Team gewährleistet einen effizienten und freundlichen Service.
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Fragen Sie uns nach unseren Gastgewerbedienstleistungen</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/bar.jpg" alt="Barservice" class="rounded-lg size-full object-cover object-left">
+                </div>
+            </div>
+            <div id="clean" class="py-5 flex flex-col xl:flex-row justify-center items-center xl:items-stretch gap-5">
+                <div class="xl:w-1/2 order-last xl:order-first self-center">
+                    <h3 class="mb-5 font-semibold text-2xl md:text-3xl">Dienstleistungen, die Ihre Umgebung makellos machen</h3>
+                    <p class="mb-5 text-start md:text-justify">
+                        Wir bieten Dienstleistungen zur Aufrechterhaltung der öffentlichen Sauberkeit, einschließlich der Reinigung öffentlicher Räume und der Einhaltung von Hygienestandards in verschiedenen Einrichtungen. Unser Team ist darauf geschult, Probleme im Bereich der Sauberkeitspflege schnell und effizient zu lösen, mit dem Fokus auf der Erhaltung der Hygiene und Sauberkeit in Straßen, Parks, Gebäuden und anderen öffentlichen Flächen.
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Beauftragen Sie uns für Wartungsdienste.</a>
+                </div>
+                <div class="md:w-3/4 xl:w-1/2">
+                    <img src="/clean.jpg" alt="Reinigungsdienst" class="rounded-lg size-full object-cover object-left">
+                </div>
+            </div>
+        </div>
+    </section>
 </MainLayout>

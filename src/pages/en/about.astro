@@ -1,7 +1,94 @@
 ---
-import MainLayout from "../../layouts/mainLayout.astro"
+import MainLayout from '../../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils.ts';
+import SwiperComponent from '../../components/carousel.jsx';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<MainLayout lang="en" title="Magnet And Care - O nama">
-
+<MainLayout lang="en" title="Magnet And Care - About Us">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5">
+            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center lg:text-left">Who We Are</h2>
+            <div class="flex flex-col 2xl:flex-row gap-5">
+                <div class="w-full 2xl:w-1/2 flex flex-col items-center lg:items-start text-lg md:text-2xl">
+                    <p class="mb-4 text-start lg:text-justify">
+                      Magnet And Care DOO is dedicated to providing professional services across various sectors. Our offerings include:
+                    </p>
+                    <ul class="mb-4 pl-10 list-disc flex flex-col gap-2 text-start">
+                      <li><span class="font-semibold">Elderly and disabled care</span>, enabling them to live a dignified and quality life.</li>
+                      <li><span class="font-semibold">Hospitality and hotel management services</span>, with positions such as waiters, bartenders, housekeepers, and laundry workers.</li>
+                      <li><span class="font-semibold">Public cleanliness and hygiene maintenance</span>, through jobs related to public utility services.</li>
+                    </ul>
+                    <p class="mb-4 text-start lg:text-justify">
+                      Our team of experts is dedicated to support and organization, providing efficient solutions to daily challenges and improving the quality of the services we offer. At the same time, we create a pleasant work environment for all our employees. We believe that quality comes from compassionate and dedicated people, which is why we continually work on building a team that shares our vision.
+                    </p>
+                    <p class="mb-4 text-start lg:text-justify">
+                        We thank you for trusting in our work and mission. If you want to be a part of our team and contribute through the various roles we offer, we invite you to join us!
+                    </p>
+                    <a href={translatePath('/contact/')} class="inline-block max-w-max self-start px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Contact us</a>
+                </div>
+                <div class="w-full 2xl:w-1/2 flex flex-col m-auto">
+                    <div class="rounded-lg overflow-hidden">
+                        <SwiperComponent stopAutoplayText="Stop autoplay" startAutoplayText="Start autoplay" client:load />
+                    </div>
+                    <button id="autoplay-toggle" class="w-60 self-center mt-2 px-4 py-2 rounded-lg bg-accent font-bold text-lg text-text duration-300 text-nowrap">
+                        Stop autoplay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 </MainLayout>
+
+<style is:global>
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-pagination-bullet {
+  height: 10px !important;
+  width: 40px !important;
+  opacity: 0.6 !important;
+  border-radius: 0.5rem !important;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+
+@media screen and (min-width: 640px) {
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: block;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: 0 !important;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    padding: 8rem 1.5rem;
+
+    transition: 300ms ease-in-out;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .swiper-button-prev {
+    left: 20px !important;
+  }
+  
+  .swiper-button-next {
+    right: 20px !important;
+  }
+}
+</style>

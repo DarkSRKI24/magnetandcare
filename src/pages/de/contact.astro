@@ -1,7 +1,107 @@
 ---
-import MainLayout from "../../layouts/mainLayout.astro"
+import MainLayout from '../../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<MainLayout lang="de" title="Magnet And Care - Kontakt i Prijava">
+<MainLayout lang="de" title="Magnet And Care - Kontakt">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5">
+            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Wir sind hier, um zu helfen</h2>
 
+            <div class="flex flex-col lg:flex-row gap-10 xl:gap-40">
+                <div class="lg:w-1/2 order-last lg:order-first">
+                    <h3 class="my-4 font-semibold text-2xl md:text-3xl">Hinterlassen Sie uns eine Nachricht</h3>
+                    <form 
+                    action="https://formspree.io/f/mbljjjnq"
+                    method="POST"
+                    class="flex flex-col items-start gap-5 text-lg md:text-2xl">
+                        <label class="w-full flex flex-col gap-2">
+                            <div>Vollständiger Name: <span class="text-red-600 italic">*</span></div>
+                            <input type="text" name="username" required placeholder="Unesite vaše puno ime i prezime..." class="overflow-auto rounded-lg border-2 border-text px-2 py-1" />
+                        </label>
+                        <label class="w-full flex flex-col gap-2">
+                            <div>E-mail: <span class="text-red-600 italic">*</span></div>
+                            <input type="email" name="email" required placeholder="Unesite vašu e-mail adresu..." class="overflow-auto rounded-lg border-2 border-text px-2 py-1" />
+                        </label>
+                        <label class="w-full flex flex-col gap-2">
+                            <div>Telefonnummer <span class="font-semibold italic">(bitte geben Sie die Landesvorwahl an)</span>:</div>
+                            <input type="tel" name="tel" placeholder="Unesite vaš broj telefona..." class="overflow-auto rounded-lg border-2 border-text px-2 py-1" />
+                        </label>
+                        <label class="w-full flex flex-col gap-2">
+                            <div>Nachricht: <span class="text-red-600 italic">*</span></div>
+                            <textarea name="message" required placeholder="Napišite vašu poruku ovde..." class="h-64 resize-none overflow-auto rounded-lg border-2 border-text px-2 py-1"></textarea>
+                        </label>
+                        <div class="flex gap-5 items-center">
+                            <input type="checkbox" id="oglasi" name="oglasi" class="ml-5 sm:ml-3 size-6 shrink-0">
+                            <label for="oglasi" class="text-base">I consent to be contacted regarding job opportunities or related communications.</label>
+                        </div>
+                        <div class="flex gap-5 items-center">
+                            <input type="checkbox" id="saglasnost" name="saglasnost" class="ml-5 sm:ml-3 size-6 shrink-0" required>
+                            <label for="saglasnost" class="text-base">Ich stimme der <a href={translatePath('/privacy/')} target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">Datenschutzrichtlinie</a> und den Methoden der Datenverarbeitung zu. <span class="text-red-600 italic">*</span></label>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LcRWF8qAAAAADCfTdnkq8sc_6y0NW57ZZkHGbc9"></div>
+                        <input type="submit" name="submit" class="w-1/2 min-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text" value="Pošaljite"/>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 order-first lg:order-last">
+                    <div class="elementResize pb-8"> <!-- Padding Bottom -->
+                        <h3 class="my-4 font-semibold text-2xl md:text-3xl">Kontaktinformationen</h3>
+                        <div class="flex flex-col gap-5 text-lg md:text-2xl">
+                            <div class="flex flex-col gap-2">
+                                <div class="underline">Telefon:</div>
+                                <a href="tel:+381641188942" target="_blank" class="w-max">+381-64-1188942</a>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="underline">E-Mail:</div>
+                                <a href="mailto:info@magnetandcare.com" target="_blank" class="w-max">info@magnetandcare.com</a>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="underline">Adresse:</div>
+                                <a href="https://maps.app.goo.gl/A5XbrDSqtD99vFtY6" target="_blank" class="inline-block text-wrap w-max">Srednja Ulica 8A, Apatin 25260</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerResize h-full rounded-lg border-2 border-text overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11152.101560851144!2d18.9831935!3d45.6703906!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cc7aeb3ea0f19%3A0xd106786e90dd0e62!2sMagnet%20And%20Care%20DOO!5e0!3m2!1sen!2srs!4v1729067631395!5m2!1sen!2srs" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-[480px] lg:h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </MainLayout>
+
+<style>
+    input::placeholder, textarea::placeholder {
+        font-size: 1rem;
+    }
+</style>
+
+
+<!-- iframe resize script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector<HTMLElement>('.containerResize');
+        const element = document.querySelector<HTMLElement>('.elementResize');
+
+        const updateHeight = () => {
+            if (container && element) {
+                const elementHeight: number = element.offsetHeight;
+
+                // Apply height calculation only if the screen width is 1024px or wider
+                if (window.matchMedia('(min-width: 1024px)').matches) {
+                    container.style.height = `calc(100% - ${elementHeight}px)`;
+                } else {
+                    // Reset height for screens smaller than 1024px
+                    container.style.height = '';
+                }
+            }
+        };
+
+        // Call the function initially and on window resize
+        updateHeight();
+        window.addEventListener('resize', updateHeight);
+    });
+</script>

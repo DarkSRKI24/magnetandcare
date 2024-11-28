@@ -1,7 +1,117 @@
 ---
-import MainLayout from "../../layouts/mainLayout.astro"
+import MainLayout from '../../layouts/mainLayout.astro';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<MainLayout lang="de" title="Magnet And Care - Zapošljavanje">
-
+<MainLayout lang="de" title="Magnet And Care - Karriere">
+    <section class="my-4 md:my-8 mx-4 flex justify-center">
+        <div class="w-full md:w-4/5 flex flex-col items-center md:items-start gap-5 text-lg md:text-2xl">
+            <h2 class="mb-4 md:mb-8 font-bold text-3xl md:text-5xl text-center md:text-left">Schließen Sie sich uns an</h2>
+            <div class="w-full mb-8 2xl:mb-20 flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full 2xl:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-semibold">Was wir unseren Mitarbeitern bieten</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Durch den Beitritt zu Magnet And Care DOO erhalten Sie stabile Arbeitsbedingungen und die Unterstützung, die Ihnen eine sichere Anstellung bietet und Ihre harte Arbeit belohnt:
+                    </p>
+                    <ul class="list-disc pl-10 flex flex-col gap-2 font-semibold">
+                        <li>Beschäftigung mit offizieller Anmeldung</li>
+                        <li>Gehaltszahlung auf Ihr Bankkonto mit regelmäßigen monatlichen Zahlungen</li>
+                        <li>Feiertagsboni: Weihnachten und Ostern</li>
+                        <li>Reisekostenrückerstattung</li>
+                        <li>Bezahlt Steuern und Beiträge</li>
+                        <li>Kostenlose Unterkunft und Verpflegung</li>
+                        <li>Organisierter Transport</li>
+                        <li>Keine Provisionen und keine Mitgliedsgebühren</li>
+                    </ul>
+                    <p class="my-5 text-start md:text-justify">
+                        Diese Bedingungen machen Magnet And Care DOO zu einem angenehmen Arbeitsplatz, an dem wir uns um unsere Mitarbeiter und ihre Bedürfnisse kümmern.
+                    </p>
+                </div>
+                <div class="w-full 2xl:w-1/2 flex order-first 2xl:order-none 2xl:justify-end items-center">
+                    <div class="w-full flex justify-center 2xl:w-4/5">
+                        <img src="/job-interview.png" alt="Vorstellungsgespräch">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-8 2xl:mb-20 flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full 2xl:w-1/2 mt-10 mb-5 flex order-first 2xl:order-none 2xl:justify-start items-center">
+                    <div class="w-full 2xl:w-4/5 flex justify-center">
+                        <img src="/cv.png" alt="Lebenslauf">
+                    </div>
+                </div>
+                <div class="w-full 2xl:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-semibold">Bewerben Sie sich für einen Job bei Magnet And Care DOO</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Um den Auswahlprozess zu erleichtern und Sie mit der passenden Position zu verbinden, wählen Sie bitte den Bereich Ihres Interesses aus und füllen Sie die erforderlichen Angaben aus. Nach Abschluss des Formulars werden wir uns mit Ihnen in Verbindung setzen und Sie durch die nächsten Schritte führen.
+                    </p>
+                    <div class="flex flex-col gap-5">
+                        <div>
+                            <p class="mb-2 text-start md:text-justify">
+                                Bewerben Sie sich für eine Tätigkeit im Pflegebereich, wenn Sie Erfahrung oder den Wunsch haben, ältere und behinderte Menschen zu unterstützen.
+                            </p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaMhDUWtqKXecGSME_MyyDmxNpxUKuDvawB21qtbrAu2wFw/viewform?usp=sf_link" target="_blank" class="inline-block max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Bewerbung für Pflegeberufe</a>
+                        </div>
+                        <div>
+                            <p class="mb-2 text-start md:text-justify">
+                                Für Jobs in der Gastronomie (Service, Barkeeper, Zimmerreinigung) bewerben Sie sich hier. <br><b>Grundkenntnisse in Englisch sind für die Arbeit als Kellner/in erforderlich.</b>
+                            </p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScTpxd7kJqyISkkXKM5kFlUvvyVaxvYtSaeV9fVkcnhQx9aPw/viewform?usp=sf_link" target="_blank" class="inline-block max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Bewerbung für Gastronomie-Positionen</a>
+                        </div>
+                        <div>
+                            <p class="mb-2 text-start md:text-justify">
+                                Für Jobs im Bereich der öffentlichen Sauberkeit und Hygiene bewerben Sie sich hier. Dieser Bereich umfasst Aufgaben zur Aufrechterhaltung der Sauberkeit und Hygiene in öffentlichen und Arbeitsräumen.
+                            </p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSesXyUzhyvH3Doe0clgs9wVx_NBr-YC9Vc8SqixmjHFuQMF5w/viewform?usp=sf_link" target="_blank" class="inline-block max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text">Bewerbung für die Wartung der öffentlichen Sauberkeit und Hygiene</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-8 flex flex-col 2xl:flex-row items-center gap-5">
+                <div class="w-full 2xl:w-1/2 self-center"> <!-- self center je ubacen -->
+                    <h3 class="text-2xl md:text-3xl font-semibold">Abonnieren Sie unseren Newsletter für Stellenanzeigen</h3>
+                    <p class="my-5 text-start md:text-justify">
+                        Abonnieren Sie unseren Newsletter und bleiben Sie über die neuesten Nachrichten, Aktionen und Jobangebote bei Magnet And Care DOO informiert. Durch das Ausfüllen dieses Formulars stimmen Sie zu, regelmäßig Updates per E-Mail zu erhalten. Ihre E-Mail-Adresse wird nicht an Dritte weitergegeben, mit Ausnahme der Nutzung der Mailchimp-Plattform für den Versand von Newslettern gemäß unserer Datenschutzrichtlinie. Sie können sich jederzeit über den Link in jeder erhaltenen E-Mail abmelden.
+                    </p>
+                    <div id="mc_embed_shell">
+                        <div id="mc_embed_signup">
+                            <form action="https://magnetandcare.us19.list-manage.com/subscribe/post?u=bdd9c7910337595506b81b292&amp;id=c07257a9d7&amp;f_id=00ab87e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group my-5 flex flex-col gap-2">
+                                        <label for="mce-EMAIL">E-Mail-Adresse <span class="asterisk text-red-600 italic">*</span></label>
+                                        <input type="email" name="EMAIL" class="required email overflow-auto rounded-lg border-2 border-text px-2 py-1" id="mce-EMAIL" required="" value="">
+                                        <p class="text-xs text-start md:text-justify">
+                                            Mit der Anmeldung zum Newsletter stimmen Sie zu, dass Ihre E-Mail-Adresse über die Mailchimp-Plattform für den Versand von Neuigkeiten und Benachrichtigungen verwendet wird. Weitere Informationen finden Sie in unserer <a href={translatePath('/privacy/')} target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">Datenschutzrichtlinie</a>.
+                                        </p>
+                                    </div>
+                                <div id="mce-responses" class="clear foot m-0">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response mb-5" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                                <input type="text" name="b_bdd9c7910337595506b81b292_c07257a9d7" tabindex="-1" value="">
+                            </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button max-w-max px-4 py-2 rounded-lg bg-primary md:hover:bg-accent duration-300 font-bold text-lg text-center text-background md:hover:text-text" value="Prijavite se">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        
+                    </div>
+                </div>
+                <div class="w-full 2xl:w-1/2 mt-10 mb-5 flex order-first 2xl:order-none 2xl:justify-end items-center">
+                    <div class="w-full 2xl:w-4/5 flex justify-center">
+                        <img src="/newsletter.png" alt="Newsletter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </MainLayout>
